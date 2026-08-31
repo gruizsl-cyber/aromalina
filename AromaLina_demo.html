@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AromaLina | Esencias</title>
+<style>
+:root{
+  --ink:#30262a;
+  --soft:#f8f1f3;
+  --rose:#b77a8a;
+  --rose2:#ead2d9;
+  --gold:#b99a62;
+  --white:#fff;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:#fff}
+header{
+  background:linear-gradient(135deg,#fff,#f8edf1);
+  padding:22px 6%;
+  display:flex;align-items:center;justify-content:space-between;
+  position:sticky;top:0;z-index:5;border-bottom:1px solid #eee;
+}
+.logo{font-family:Georgia,serif;font-size:30px;letter-spacing:1px}
+.logo span{color:var(--rose)}
+nav a{margin-left:22px;text-decoration:none;color:var(--ink);font-size:15px}
+.hero{
+  min-height:420px;padding:70px 7%;display:flex;align-items:center;
+  background:radial-gradient(circle at 80% 30%,#f0dce2 0 15%,transparent 38%),linear-gradient(120deg,#fff 45%,#fbf3f5);
+}
+.hero-text{max-width:650px}
+.kicker{color:var(--rose);text-transform:uppercase;letter-spacing:3px;font-size:13px}
+h1{font-family:Georgia,serif;font-size:58px;line-height:1.05;margin:12px 0}
+.hero p{font-size:18px;line-height:1.6;color:#65595e}
+.btn{
+  display:inline-block;background:var(--rose);color:#fff;text-decoration:none;
+  padding:13px 22px;border-radius:28px;margin-top:12px;font-weight:bold
+}
+section{padding:55px 7%}
+.section-title{text-align:center;font-family:Georgia,serif;font-size:34px;margin:0 0 10px}
+.section-sub{text-align:center;color:#75686d;margin-bottom:35px}
+.categories{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-bottom:35px}
+.filter{
+  border:1px solid var(--rose2);background:#fff;color:var(--ink);
+  padding:10px 18px;border-radius:22px;cursor:pointer
+}
+.filter.active{background:var(--rose);color:#fff}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:22px}
+.card{
+  border:1px solid #eee;border-radius:18px;overflow:hidden;background:#fff;
+  box-shadow:0 5px 18px #0000000d
+}
+.bottle{
+  height:220px;background:linear-gradient(145deg,#f8eef1,#eee0e4);
+  display:flex;align-items:center;justify-content:center;position:relative
+}
+.bottle-shape{
+  width:82px;height:125px;border-radius:14px 14px 18px 18px;
+  background:linear-gradient(90deg,#ead0d7,#fff,#d9b7c1);
+  border:1px solid #cbaeb7;box-shadow:0 12px 20px #6c4b5530;
+  position:relative
+}
+.bottle-shape:before{
+  content:"AROMALINA";position:absolute;top:48px;left:9px;right:9px;
+  font-family:Georgia,serif;font-size:9px;text-align:center;color:#6c4d56
+}
+.cap{width:34px;height:25px;background:#c9a86c;position:absolute;top:-24px;left:23px;border-radius:5px 5px 2px 2px}
+.card-body{padding:18px}
+.card h3{margin:0 0 7px;font-family:Georgia,serif;font-size:21px}
+.type{font-size:13px;color:var(--rose);text-transform:uppercase;letter-spacing:1px}
+.card p{font-size:14px;color:#71666b;line-height:1.5;min-height:42px}
+.price{font-size:20px;font-weight:bold;margin:14px 0}
+.whatsapp{background:#4c9a65}
+.about{background:var(--soft)}
+.about-inner{max-width:800px;margin:auto;text-align:center}
+.about p{line-height:1.7;color:#62575b}
+footer{background:#30262a;color:#fff;padding:35px 7%;text-align:center}
+footer p{color:#d9cfd2}
+@media(max-width:650px){
+  header{padding:18px 5%}.logo{font-size:25px}nav a{margin-left:10px;font-size:13px}
+  .hero{padding:55px 7%;min-height:390px}h1{font-size:45px}
+  section{padding:45px 6%}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">Aroma<span>Lina</span></div>
+  <nav>
+    <a href="#catalogo">Catálogo</a>
+    <a href="#nosotros">Nosotros</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-text">
+    <div class="kicker">Esencias femeninas y masculinas</div>
+    <h1>Una fragancia, una historia.</h1>
+    <p>Descubrí la esencia que mejor representa tu estilo. Esta es una primera maqueta de AromaLina: después podremos reemplazar nombres, fotos, precios y textos por los datos reales.</p>
+    <a class="btn" href="#catalogo">Ver esencias</a>
+  </div>
+</section>
+
+<section id="catalogo">
+  <h2 class="section-title">Nuestro catálogo</h2>
+  <p class="section-sub">Productos de ejemplo — los reemplazaremos por tus esencias reales.</p>
+
+  <div class="categories">
+    <button class="filter active" onclick="filterCards('todos',this)">Todas</button>
+    <button class="filter" onclick="filterCards('femenina',this)">Femeninas</button>
+    <button class="filter" onclick="filterCards('masculina',this)">Masculinas</button>
+  </div>
+
+  <div class="grid">
+    <article class="card" data-type="femenina">
+      <div class="bottle"><div class="bottle-shape"><div class="cap"></div></div></div>
+      <div class="card-body">
+        <div class="type">Femenina</div><h3>Esencia Floral</h3>
+        <p>Una fragancia delicada, fresca y femenina.</p>
+        <div class="price">$ XX.XXX</div>
+        <a class="btn whatsapp" href="#contacto">Consultar</a>
+      </div>
+    </article>
+
+    <article class="card" data-type="femenina">
+      <div class="bottle"><div class="bottle-shape"><div class="cap"></div></div></div>
+      <div class="card-body">
+        <div class="type">Femenina</div><h3>Esencia Intense</h3>
+        <p>Un aroma elegante para acompañar momentos especiales.</p>
+        <div class="price">$ XX.XXX</div>
+        <a class="btn whatsapp" href="#contacto">Consultar</a>
+      </div>
+    </article>
+
+    <article class="card" data-type="masculina">
+      <div class="bottle"><div class="bottle-shape"><div class="cap"></div></div></div>
+      <div class="card-body">
+        <div class="type">Masculina</div><h3>Esencia Classic</h3>
+        <p>Un perfume masculino, sobrio y versátil.</p>
+        <div class="price">$ XX.XXX</div>
+        <a class="btn whatsapp" href="#contacto">Consultar</a>
+      </div>
+    </article>
+
+    <article class="card" data-type="masculina">
+      <div class="bottle"><div class="bottle-shape"><div class="cap"></div></div></div>
+      <div class="card-body">
+        <div class="type">Masculina</div><h3>Esencia Night</h3>
+        <p>Una fragancia intensa pensada para la noche.</p>
+        <div class="price">$ XX.XXX</div>
+        <a class="btn whatsapp" href="#contacto">Consultar</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="nosotros" class="about">
+  <div class="about-inner">
+    <h2 class="section-title">AromaLina</h2>
+    <p>Un emprendimiento personal dedicado a ofrecer esencias femeninas y masculinas, con una selección pensada para que cada persona encuentre una fragancia que sienta propia.</p>
+  </div>
+</section>
+
+<section id="contacto">
+  <h2 class="section-title">¿Querés hacer una consulta?</h2>
+  <p class="section-sub">Cuando tengas tu número de WhatsApp e Instagram, los colocamos aquí.</p>
+  <div style="text-align:center">
+    <a class="btn whatsapp" href="#">Consultar por WhatsApp</a>
+  </div>
+</section>
+
+<footer>
+  <div class="logo">Aroma<span style="color:#d8b5bf">Lina</span></div>
+  <p>Esencias femeninas y masculinas</p>
+  <p>© 2026 AromaLina</p>
+</footer>
+
+<script>
+function filterCards(type, button){
+  document.querySelectorAll('.filter').forEach(b=>b.classList.remove('active'));
+  button.classList.add('active');
+  document.querySelectorAll('.card').forEach(card=>{
+    card.style.display = (type==='todos' || card.dataset.type===type) ? '' : 'none';
+  });
+}
+</script>
+</body>
+</html>
